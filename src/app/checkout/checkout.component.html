@@ -1,0 +1,40 @@
+<p *ngIf="cartItems.length === 0; else elseBlock">No items added</p>
+
+<ng-template #elseBlock>
+  <div class="container">
+    <div class="card_container">
+      <div
+        *ngFor="let item of cartItems"
+        class="card"
+        style="width: 24rem; display: flex; flex-direction: row"
+      >
+        <div class="image-container">
+          <img
+            [src]="item.imageUrl || 'default-image.jpg'"
+            class="card-img-top"
+            alt="Product Image"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">₹{{ item.price }}</p>
+          <button class="btn btn-danger" (click)="removeFromCart(item)">
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="width: 16rem">
+        <div class="card-body">
+          <p *ngFor="let item of cartItems" class="card-text">
+            {{ item.name }} = ₹{{ item.price }}
+          </p>
+          <p class="card-text">Total Price = ₹{{ sumPrice() }}</p>
+          <!-- PayPal button container -->
+          <div id="paypal-button-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">E-Commerce</a>
+    <div
+      class="collapse navbar-collapse justify-content-center"
+      id="navbarTogglerDemo03"
+    >
+      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="">Buy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell">Sell</a>
+        </li>
+      </ul>
+    </div>
+    <div class="ms-auto">
+      <button class="btn btn-outline-primary" (click)="goToCheckout()">
+        Cart ({{ cartCount }})
+      </button>
+      <ng-container *ngIf="isLoggedIn; else loginTemplate">
+        <button class="btn btn-outline-success" (click)="logout()">
+          Logout
+        </button>
+      </ng-container>
+      <ng-template #loginTemplate>
+        <a href="login" class="btn btn-outline-success">Login</a>
+      </ng-template>
+    </div>
+  </div>
+</nav>

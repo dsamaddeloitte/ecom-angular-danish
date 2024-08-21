@@ -1,0 +1,25 @@
+form {
+  border: 2px solid #0d6efd;
+  border-radius: 10px;
+  width: 30%;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(220, 245, 244);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+.form_row {
+  display: flex;
+}
+.showError {
+  color: red;
+  font-size: 12px;
+}
+.icon {
+  width: 14%;
+}

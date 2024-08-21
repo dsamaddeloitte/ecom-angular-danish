@@ -1,0 +1,51 @@
+<div class="container">
+  <form>
+    <label htmlFor="name">Email</label><br />
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="userObj.useremail"
+      placeholder="Enter email"
+    />
+    <span class="showError">{{ userErr.errUseremail }}</span
+    ><br />
+    <label htmlFor="password">Password</label><br />
+    <div class="form_row">
+      <input
+        [type]="isPassword ? 'password' : 'text'"
+        name="password"
+        [(ngModel)]="userObj.password"
+        placeholder="Enter Password"
+      />
+      <input
+        type="button"
+        class="icon"
+        [value]="isPassword ? 'Show' : 'Hide'"
+        (click)="togglePassword()"
+      />
+    </div>
+    <span class="showError">{{ userErr.errPassword }}</span
+    ><br />
+    <div class="form_row">
+      <input
+        [type]="isPassword ? 'password' : 'text'"
+        name="password"
+        [(ngModel)]="userObj.confirmPassword"
+        placeholder="Confirm Password"
+      />
+      <input
+        type="button"
+        class="icon"
+        [value]="isPassword ? 'Show' : 'Hide'"
+        (click)="togglePassword()"
+      />
+    </div>
+    <span class="showError">{{ userErr.errConfirmPassword }}</span
+    ><br />
+
+    <button class="btn btn-outline-primary" (click)="registerUser()">
+      Submit
+    </button>
+    <p><span>Already have an account ? </span><a href="login">Click here</a></p>
+  </form>
+</div>
